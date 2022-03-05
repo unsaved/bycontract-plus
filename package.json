@@ -1,0 +1,17 @@
+{
+  "name": "bycontract-plus",
+  "version": "1.0.0",
+  "description": "Extensions to byconvention library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["validation", "parameter validation", "byextension"],
+  "author": "Blaine Simpson <blaine.simpson@admc.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/myogeshchavan97/github-repos-search",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myogeshchavan97/github-repos-search.git"
+  }
+}

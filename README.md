@@ -23,7 +23,15 @@ to validate call given as fase.
 1. If the first non-boolean validate parameter after #2 is a string, then
 it is a message to be used in validation Errors, overriding the default.
 1. The message for previous feature can use util.format % placeholders and
-varargs.
+
+I added the following validator functions, whose purpose should be obvious
+from the names.
+* int
+* date
+* posint
+* nonnegint
+* posnum
+* isotimestr
 
 Usage is same as for [bycontract](https://www.npmjs.com/package/bycontract) other than...
 ```javascript

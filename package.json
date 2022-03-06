@@ -4,7 +4,10 @@
   "description": "Extensions to byconvention library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "require+": "node -p 'const { validate, is } = require(\"./index\"); validate(\"str\", \"string\");'",
+    "require-": "node -p 'const { validate, is } = require(\"./index\"); validate(\"str\", \"int\");'",
+    "import+": "node -r esm -p 'import { validate, is } from \"./index\"; validate(\"str\", \"string\");'",
+    "import-": "node -r esm -p 'import { validate, is } from \"./index\"; validate(\"str\", \"int\");'"
   },
   "keywords": [
     "validation",
@@ -21,5 +24,8 @@
   "dependencies": {
     "bycontract": "^2.0.11",
     "util": "^0.12.4"
+  },
+  "devDependencies": {
+    "esm": "^3.2.25"
   }
 }

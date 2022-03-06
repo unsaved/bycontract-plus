@@ -12,7 +12,7 @@ Users will usually want to require/import the 'validate' and 'is' objects.
 The first for performing validations, and the second to add custom
 validator functions.
 
-== Enhancements
+## Enhancements
 1. The original 'validate' function requieres 2 and only 2 parameters.
 I support some optional extra params.
 1. For validate calls with first param arguments or an Array, I enforce

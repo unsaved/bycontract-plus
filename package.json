@@ -6,12 +6,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["validation", "parameter validation", "byextension"],
+  "keywords": [
+    "validation",
+    "parameter validation",
+    "byextension"
+  ],
   "author": "Blaine Simpson <blaine.simpson@admc.com>",
   "license": "MIT",
-  "homepage": "https://github.com/myogeshchavan97/github-repos-search",
+  "homepage": "https://github.com/unsaved/bycontract-plus",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/myogeshchavan97/github-repos-search.git"
+    "url": "https://github.com/unsaved/bycontract-plus.git"
+  },
+  "dependencies": {
+    "bycontract": "^2.0.11",
+    "util": "^0.12.4"
   }
 }

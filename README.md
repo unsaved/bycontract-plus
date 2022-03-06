@@ -5,7 +5,7 @@ I tried contracting Dmitry to get his direction on the best way to extend his
 module, but he hasn't replied to me.  Not knowing if I will have to repeat
 this extension work, I went with strategy that I can do most quickly and easily 
 (but not necessarily best long-term)-- just make this new project that loads
-the byextension module and adds to it.
+the bycontract module and adds to it.
 
 # Usage
 Users will usually want to require/import the 'validate' and 'is' objects.

@@ -34,6 +34,7 @@ from the names.
 * nonnegint
 * posnum
 * isotimestr
+* plainobject
 
 Usage is same as for [bycontract](https://www.npmjs.com/package/bycontract) other than...
 ```javascript

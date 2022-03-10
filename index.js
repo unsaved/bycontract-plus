@@ -4,19 +4,21 @@ module.exports.validate = blaineValidate;
 module.exports.Exception = byContract.Exception;
 module.exports.is = byContract.is;
 
-byContract.is.int = (val) => { return Number.isInteger(val); };
-byContract.is.date = (val) => {
-    return val !== null && typeof(val) === "object" && (val instanceof Date);
-};
-byContract.is.posint = (val) => { return Number.isInteger(val) && val > 0; };
-byContract.is.nonnegint = (val) => {
-    return Number.isInteger(val) && val >= 0;
-};
-byContract.is.posnum = (val) => { return Number.isNumber(val) && val > 0; };
-byContract.is.isotimestr = (val)=> {
-    return typeof(val) === "string" &&
-      /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d$/.test(val);
-};
+byContract.is.int = val => Number.isInteger(val);
+byContract.is.date = val =>
+    val !== null && typeof(val) === "object" && (val instanceof Date)
+;
+byContract.is.posint = val => Number.isInteger(val) && val > 0;
+byContract.is.nonnegint = val => Number.isInteger(val) && val >= 0;
+byContract.is.posnum = val => Number.isNumber(val) && val > 0;
+byContract.is.isotimestr = val =>
+    typeof(val) === "string" &&
+      /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d$/.test(val)
+;
+byContract.is.plainobject = val =>
+    typeof(val) === "object" && val !== null &&
+      Object.getPrototypeOf(val) === Object.getPrototypeOf({})
+;
 class DoccedValError extends byContract.Exception {
     constructor() {
         const argArray = Array.prototype.slice.call(arguments);

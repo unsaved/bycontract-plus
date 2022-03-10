@@ -1,4 +1,4 @@
-const util = require("util");
+const { format } = require("util");
 const byContract = require("bycontract");
 module.exports.validate = blaineValidate;
 module.exports.Exception = byContract.Exception;
@@ -20,7 +20,7 @@ byContract.is.isotimestr = (val)=> {
 class DoccedValError extends byContract.Exception {
     constructor() {
         const argArray = Array.prototype.slice.call(arguments);
-        super(argArray.shift(), util.format.apply(null, argArray));
+        super(argArray.shift(), format.apply(null, argArray));
         this.name = "DoccedValError";
     }
 }
@@ -45,8 +45,7 @@ function blaineValidate() {
         argsArray.splice(2, 1);
     }
     if (argsArray.length > 2)
-        failMsg = util.format.apply(
-          null, argsArray.splice(2, argsArray.length - 2));
+        failMsg = format.apply(null, argsArray.splice(2, argsArray.length - 2));
     // Imperfect test that 1st parameter is an 'arguments'.
     // Can't use arguments.callee in 'use strict' mode.
     if (doEnforceArgsLength && arguments[1] instanceof Array

@@ -11,7 +11,13 @@ byContract.is.date = val =>
 byContract.is.posint = val => Number.isInteger(val) && val > 0;
 byContract.is.nonnegint = val => Number.isInteger(val) && val >= 0;
 byContract.is.posnum = val => Number.isNumber(val) && val > 0;
-byContract.is.isotimestr = val =>
+byContract.is.isotimestr = val =>  // ISO 86601
+    typeof(val) === "string" &&
+    /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:[.]\d+)?(?:[+-]\d\d|[+-]\d\d?:\d\d)?Z?$/
+      .test(val)
+;
+// This is ISO 8601 format to second resolution with no optional additions.
+byContract.is.isotimestr_s = val =>
     typeof(val) === "string" &&
       /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d$/.test(val)
 ;

@@ -9,7 +9,11 @@
     "import+": "node -r esm -p 'import { validate, is } from \"./bycontractOverride\"; validate(\"str\", \"string\");'",
     "import-": "node -r esm -p 'import { validate, is } from \"./bycontractOverride\"; validate(\"str\", \"int\");'",
     "tooManyArray-": "node -p 'const { validate } = require(\"./bycontractOverride\"); validate([1,2,3], [\"number\", \"number\"]);'",
-    "tooManyArguments-": "node -p 'const { validate } = require(\"./bycontractOverride\"); f(1,2,3); function f() {validate(arguments, [\"number\", \"number\"]);}'"
+    "tooManyArguments-": "node -p 'const { validate } = require(\"./bycontractOverride\"); f(1,2,3); function f() {validate(arguments, [\"number\", \"number\"]);}'",
+    "iso+": "node -p 'const { validate } = require(\"./bycontractOverride\"); validate(new Date().toISOString(), \"isotimestr\");'",
+    "iso_s-": "node -p 'const { validate } = require(\"./bycontractOverride\"); validate(new Date().toISOString(), \"isotimestr_s\");'",
+    "iso_s+": "node -p 'const { validate } = require(\"./bycontractOverride\"); validate(\"2021-02-03T21:02:03\", \"isotimestr_s\");'",
+    "iso-": "node -p 'const { validate } = require(\"./bycontractOverride\"); validate(\"2021-02-03 21:02:03\", \"isotimestr_s\");'"
   },
   "keywords": [
     "validation",

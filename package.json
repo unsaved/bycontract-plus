@@ -2,7 +2,7 @@
   "name": "bycontract-plus",
   "version": "1.1.0",
   "description": "Extensions to byconvention library",
-  "main": "byconractOverride.js",
+  "main": "bycontractOverride.js",
   "scripts": {
     "require+": "node -p 'const { validate, is } = require(\"./bycontractOverride\"); validate(\"str\", \"string\");'",
     "require-": "node -p 'const { validate, is } = require(\"./bycontractOverride\"); validate(\"str\", \"int\");'",

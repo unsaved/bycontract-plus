@@ -1,6 +1,6 @@
 {
   "name": "bycontract-plus",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Extensions to byconvention library",
   "main": "byconractOverride.js",
   "scripts": {

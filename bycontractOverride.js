@@ -33,25 +33,23 @@ module.exports.DoccedValError = DoccedValError;
  *   blaineValidat(vals, contracts, doEnforceArgsLength, [messageParams....]
  * OR
  *   blaineValidat(vals, contracts, [messageParams....]
- *   This uses default doEnforceArgsLength behavior (true).
+ *
+ * If doEnforceArgsLength true (the default behavior) and if contracts is
+ * an Array then length of vals is enforced to be <= contract length.
  */
 function blaineValidate() {
-//function blaineValidate(vals, contracts, doEnforceArgsLength, failMsg) {
     const argsArray = Array.prototype.slice.call(arguments);
     if (argsArray.length < 2)
         throw new Error(".validate called with " + argsArray.length
           + " params, but requires at least a candidate value + contract");
-    let doEnforceArgsLength = false, failMsg;
+    let doEnforceArgsLength = true, failMsg;
     if (argsArray.length > 2 && typeof(argsArray[2]) === "boolean") {
         doEnforceArgsLength = argsArray[2];
         argsArray.splice(2, 1);
     }
     if (argsArray.length > 2)
         failMsg = format.apply(null, argsArray.splice(2, argsArray.length - 2));
-    // Imperfect test that 1st parameter is an 'arguments'.
-    // Can't use arguments.callee in 'use strict' mode.
     if (doEnforceArgsLength && arguments[1] instanceof Array
-      && typeof(arguments[0]) === "object" && arguments[0] !== null
       && ("length" in arguments[0])
       && arguments[0].length > arguments[1].length)
         throw new DoccedValError("ETOOMANYARGS",

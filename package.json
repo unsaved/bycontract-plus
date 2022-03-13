@@ -2,12 +2,14 @@
   "name": "bycontract-plus",
   "version": "1.0.2",
   "description": "Extensions to byconvention library",
-  "main": "index.js",
+  "main": "byconractOverride.js",
   "scripts": {
-    "require+": "node -p 'const { validate, is } = require(\"./index\"); validate(\"str\", \"string\");'",
-    "require-": "node -p 'const { validate, is } = require(\"./index\"); validate(\"str\", \"int\");'",
-    "import+": "node -r esm -p 'import { validate, is } from \"./index\"; validate(\"str\", \"string\");'",
-    "import-": "node -r esm -p 'import { validate, is } from \"./index\"; validate(\"str\", \"int\");'"
+    "require+": "node -p 'const { validate, is } = require(\"./bycontractOverride\"); validate(\"str\", \"string\");'",
+    "require-": "node -p 'const { validate, is } = require(\"./bycontractOverride\"); validate(\"str\", \"int\");'",
+    "import+": "node -r esm -p 'import { validate, is } from \"./bycontractOverride\"; validate(\"str\", \"string\");'",
+    "import-": "node -r esm -p 'import { validate, is } from \"./bycontractOverride\"; validate(\"str\", \"int\");'",
+    "tooManyArray-": "node -p 'const { validate } = require(\"./bycontractOverride\"); validate([1,2,3], [\"number\", \"number\"]);'",
+    "tooManyArguments-": "node -p 'const { validate } = require(\"./bycontractOverride\"); f(1,2,3); function f() {validate(arguments, [\"number\", \"number\"]);}'"
   },
   "keywords": [
     "validation",

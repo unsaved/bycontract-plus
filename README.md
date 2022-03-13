@@ -17,16 +17,17 @@ validator functions.
 ## Enhancements
 1. The original 'validate' function requieres 2 and only 2 parameters.
 I support some optional extra params.
-1. For validate calls with first param arguments or an Array, I enforce
-that the number of elements doesn't exceed that of the specified
-enforcement contract (2nd parameter).
-1. Test element count enforcement (#1 above) is not done if 3rd parameter
+1. For validate calls where contract parameter (2nd) is an Array, I enforce
+that the number of value elements doesn't exceed that of the specified
+contract.
+1. Test element count enforcement (previous item) is not done if 3rd parameter
 to validate call given as fase.
 1. If the first non-boolean validate parameter after #2 is a string, then
 it is a message to be used in validation Errors, overriding the default.
-1. The message for previous feature can use util.format % placeholders and
+1. The message for previous feature can use util.format % placeholders, with
+format varargs parameters being all remaining parameters.
 
-I added the following validator functions, whose purpose should be obvious
+I added the following validator functions, whose purposes should be obvious
 from the names.
 * int
 * date

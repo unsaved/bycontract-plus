@@ -11,7 +11,7 @@ byContract.is.date = val =>
 byContract.is.posint = val => Number.isInteger(val) && val > 0;
 byContract.is.nonnegint = val => Number.isInteger(val) && val >= 0;
 byContract.is.posnum = val => Number.isNumber(val) && val > 0;
-byContract.is.isotimestr = val =>  // ISO 86601
+byContract.is.isotimestr = val =>  // ISO 8601
     typeof(val) === "string" &&
     /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:[.]\d+)?(?:[+-]\d\d|[+-]\d\d?:\d\d)?Z?$/
       .test(val)

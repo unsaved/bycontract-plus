@@ -1,0 +1,2 @@
+Add another option to validate without throwing, for cases where the caller knows the appropriate remediation.
+I'm thinking that in this case we still would like indication of precisely what's wrong, as bycontract nicely writes into the ByContractError .message, so I'm thinking return null or true in case of test success, and the ByContractError.message in case of test failure.

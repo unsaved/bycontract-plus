@@ -37,6 +37,8 @@ from the names.
 * isotimestr
 * plainobject
 
+See file "readme.txt" for planned future enhancements.
+
 Usage is same as for [bycontract](https://www.npmjs.com/package/bycontract) other than...
 ```javascript
 const { validate, is } = require("bcontract-plus");

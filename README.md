@@ -48,3 +48,9 @@ validate(arguments, ["string", "int"], false);
 
 // In case of validation failure, use the specified Error message.
 validate(var, "string", "%ith element in issue list not a string", i);
+
+// In particular, the run "[]" no longer means "any" Array, it means
+// precisely [], a 0-length array.
+// To get the original bycontract behavior to test for any Array, use:
+validate(var, "", false);
+validate(arguments, [""], false);

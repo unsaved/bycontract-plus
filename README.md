@@ -15,7 +15,7 @@ The first for performing validations, and the second to add custom
 validator functions.
 
 ## Enhancements
-1. The original 'validate' function requieres 2 and only 2 parameters.
+1. The original 'validate' function requires 2 and only 2 parameters.
 I support some optional extra params.
 1. For validate calls where contract parameter (2nd) is an Array, I enforce
 that the number of value elements doesn't exceed that of the specified

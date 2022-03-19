@@ -1,6 +1,8 @@
 # Description
 node.js module for validating (primarily) function parameters.
 
+## DEPRECATION:  
+
 This module provides a map that's the same as that provided by Dmitry Sheiko's
 'bycontract' module, with the feature extensions described below.
 I tried contracting Dmitry to get his direction on the best way to extend his
@@ -41,7 +43,7 @@ See file "readme.txt" for planned future enhancements.
 
 Usage is same as for [bycontract](https://www.npmjs.com/package/bycontract) other than...
 ```javascript
-const { validate, is } = require("bcontract-plus");
+const { validate, is } = require("@admc.com/bycontract-plus");
 
 // Allow more than two arguments elements:
 validate(arguments, ["string", "int"], false);

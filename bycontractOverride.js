@@ -36,9 +36,9 @@ module.exports.DoccedValError = DoccedValError;
 
 /**
  * Call like either:
- *   blaineValidat(vals, contracts, doEnforceArgsLength, [messageParams....]
+ *   blaineValidate(vals, contracts, doEnforceArgsLength, [messageParams....]
  * OR
- *   blaineValidat(vals, contracts, [messageParams....]
+ *   blaineValidate(vals, contracts, [messageParams....]
  *
  * If doEnforceArgsLength true (the default behavior) and if contracts is
  * an Array then length of vals is enforced to be <= contract length.

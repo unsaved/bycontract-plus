@@ -1,6 +1,5 @@
 const { format } = require("util");
 const byContract = require("bycontract");
-module.exports.validate = blaineValidate;
 module.exports.Exception = byContract.Exception;
 module.exports.is = byContract.is;
 
@@ -17,7 +16,7 @@ byContract.is.isotimestr = val =>  // ISO 8601
       .test(val)
 ;
 // This is ISO 8601 format to second resolution with no optional additions.
-byContract.is.isotimestr_s = val =>
+byContract.is.isotimestr_s = val =>  // eslint-disable-line camelcase
     typeof(val) === "string" &&
       /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d$/.test(val)
 ;
@@ -74,3 +73,5 @@ function blaineValidate() {
           e0.code, failMsg + "\n" + e0.message);
     }
 }
+
+module.exports.validate = blaineValidate;

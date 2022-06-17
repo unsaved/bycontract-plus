@@ -2,6 +2,7 @@ const { format } = require("util");
 const byContract = require("bycontract");
 module.exports.Exception = byContract.Exception;
 module.exports.is = byContract.is;
+module.exports.validate = blaineValidate;  // eslint-disable-line no-use-before-define
 
 byContract.is.int = val => Number.isInteger(val);
 byContract.is.date = val =>
@@ -73,5 +74,3 @@ function blaineValidate() {
           e0.code, failMsg + "\n" + e0.message);
     }
 }
-
-module.exports.validate = blaineValidate;

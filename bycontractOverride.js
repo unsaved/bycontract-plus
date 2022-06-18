@@ -5,26 +5,19 @@ module.exports.is = byContract.is;
 module.exports.validate = blaineValidate;  // eslint-disable-line no-use-before-define
 
 byContract.is.int = val => Number.isInteger(val);
-byContract.is.date = val =>
-    val !== null && typeof(val) === "object" && (val instanceof Date)
-;
+byContract.is.date = val => val !== null && typeof(val) === "object" && (val instanceof Date);
 byContract.is.posint = val => Number.isInteger(val) && val > 0;
 byContract.is.nonnegint = val => Number.isInteger(val) && val >= 0;
 byContract.is.posnum = val => Number.isNumber(val) && val > 0;
 byContract.is.isotimestr = val =>  // ISO 8601
     typeof(val) === "string" &&
-    /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:[.]\d+)?(?:[+-]\d\d|[+-]\d\d?:\d\d)?Z?$/
-      .test(val)
-;
+    /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:[.]\d+)?(?:[+-]\d\d|[+-]\d\d?:\d\d)?Z?$/.test(val);
 // This is ISO 8601 format to second resolution with no optional additions.
 byContract.is.isotimestr_s = val =>  // eslint-disable-line camelcase
-    typeof(val) === "string" &&
-      /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d$/.test(val)
-;
+    typeof(val) === "string" && /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d$/.test(val);
 byContract.is.plainobject = val =>
     typeof(val) === "object" && val !== null &&
-      Object.getPrototypeOf(val) === Object.getPrototypeOf({})
-;
+      Object.getPrototypeOf(val) === Object.getPrototypeOf({});
 class DoccedValError extends byContract.Exception {
     constructor() {
         const argArray = Array.prototype.slice.call(arguments);
@@ -60,17 +53,14 @@ function blaineValidate() {
       && arguments[0].length > arguments[1].length)
         throw new DoccedValError("ETOOMANYARGS",
           (failMsg === undefined ? "" : (failMsg + "\n"))
-          + "Called with "
-          + arguments[0].length + " arguments but at most "
+          + "Called with " + arguments[0].length + " arguments but at most "
           + arguments[1].length + " are supported");
     if (failMsg === undefined)
         return byContract.validate.apply(null, argsArray);
     try {
         return byContract.validate.apply(null, argsArray);
     } catch (e0) {
-        if (typeof(e0) !== "object" || !("name" in e0)
-          || e0.name !== "ByContractError") throw e0;
-        throw new DoccedValError(
-          e0.code, failMsg + "\n" + e0.message);
+        if (typeof(e0) !== "object" || !("name" in e0) || e0.name !== "ByContractError") throw e0;
+        throw new DoccedValError(e0.code, failMsg + "\n" + e0.message);
     }
 }

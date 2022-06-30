@@ -1,6 +1,6 @@
 {
   "name": "@admc.com/bycontract-plus",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Extensions to byconvention library",
   "main": "bycontractOverride.js",
   "scripts": {

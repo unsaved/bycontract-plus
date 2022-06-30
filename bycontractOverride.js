@@ -4,7 +4,7 @@ const { format } = require("util");
 const byContract = require("bycontract");
 module.exports.Exception = byContract.Exception;
 module.exports.is = byContract.is;
-module.exports.validate = blaineValidate;  // eslint-disable-line no-use-before-define
+module.exports.validate = blaineValidate;
 
 byContract.is.int = val => Number.isInteger(val);
 byContract.is.date = val => val !== null && typeof val === "object" && val instanceof Date;

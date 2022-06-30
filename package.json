@@ -4,7 +4,7 @@
   "description": "Extensions to byconvention library",
   "main": "bycontractOverride.js",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint --ext .js .",
     "require+": "node -p 'const { validate, is } = require(\"./bycontractOverride\"); validate(\"str\", \"string\");'",
     "require-": "node -p 'const { validate, is } = require(\"./bycontractOverride\"); validate(\"str\", \"int\");'",
     "import+": "node -r esm -p 'import { validate, is } from \"./bycontractOverride\"; validate(\"str\", \"string\");'",

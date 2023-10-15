@@ -11,6 +11,7 @@ byContract.is.date = val => val !== null && typeof val === "object" && val insta
 byContract.is.posint = val => Number.isInteger(val) && val > 0;
 byContract.is.nonnegint = val => Number.isInteger(val) && val >= 0;
 byContract.is.posnum = val => typeof val === "number" && !isNaN(val) && val > 0;
+byContract.is.nonnegnum = val => typeof val === "number" && !isNaN(val) && val >= 0;
 // This is of course just one format for date string.
 // Including because it's very useful for development and scripting because it sorts
 // in agreement with time order for all locations.

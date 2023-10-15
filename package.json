@@ -4,6 +4,7 @@
   "description": "Extensions to byconvention library",
   "main": "bycontractOverride.js",
   "scripts": {
+    "test": "mocha",
     "lint": "eslint",
     "require+": "node -p 'const { validate, is } = require(\"./bycontractOverride\"); validate(\"str\", \"string\");'",
     "require-": "node -p 'const { validate, is } = require(\"./bycontractOverride\"); validate(\"str\", \"int\");'",
@@ -34,6 +35,7 @@
   },
   "devDependencies": {
     "eslint": "^8.17.0",
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "mocha": "^10.2.0"
   }
 }

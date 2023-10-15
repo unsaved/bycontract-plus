@@ -10,7 +10,12 @@ byContract.is.int = val => Number.isInteger(val);
 byContract.is.date = val => val !== null && typeof val === "object" && val instanceof Date;
 byContract.is.posint = val => Number.isInteger(val) && val > 0;
 byContract.is.nonnegint = val => Number.isInteger(val) && val >= 0;
-byContract.is.posnum = val => Number.isNumber(val) && val > 0;
+byContract.is.posnum = val => typeof val === "number" && !isNaN(val) && val > 0;
+// This is of course just one format for date string.
+// Including because it's very useful for development and scripting because it sorts
+// in agreement with time order for all locations.
+// Notice that we strictly require 2 characters for month and day-of-month numbers, like "02".
+byContract.is.strictdatestr = v => typeof v === "string" && /^\d\d\d\d-\d\d-\d\d$/.test(v);
 byContract.is.isotimestr = val =>  // ISO 8601
     typeof val === "string" &&
     /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:[.]\d+)?(?:[+-]\d\d|[+-]\d\d?:\d\d)?Z?$/.test(val);

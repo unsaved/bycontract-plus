@@ -16,13 +16,13 @@ byContract.is.nonnegnum = val => typeof val === "number" && !isNaN(val) && val >
 // Including because it's very useful for development and scripting because it sorts
 // in agreement with time order for all locations.
 // Notice that we strictly require 2 characters for month and day-of-month numbers, like "02".
-byContract.is.strictdatestr = v => typeof v === "string" && /^\d\d\d\d-\d\d-\d\d$/.test(v);
-byContract.is.isotimestr = val =>  // ISO 8601
+byContract.is.strictdatestr = v => typeof v === "string" && /^\d{4}-[01]\d-[0-3]\d$/.test(v);
+byContract.is.isotimestr = val =>  // ISO 8601, zone of +/0 or Z optional
     typeof val === "string" &&
-    /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:[.]\d+)?(?:[+-]\d\d|[+-]\d\d?:\d\d)?Z?$/.test(val);
-// This is ISO 8601 format to second resolution with no optional additions.
+    /^\d{4}-[01]\d-[0-3]\dT[012]\d:[0-5]\d:[0-5]\d(?:[.]\d+)?(?:[+-]\d\d|[+-]\d\d?:\d\d|Z)?$/.test(val);
+// This is ISO 8601 format to second resolution with no optional zone suffix.
 byContract.is.isotimestr_s = val =>  // eslint-disable-line camelcase
-    typeof val === "string" && /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d$/.test(val);
+    typeof val === "string" && /^\d{4}-[01]\d-[0-3]\dT[012]\d:[0-5]\d:[0-5]\d$/.test(val);
 byContract.is.plainobject = val =>
     typeof val === "object" && val !== null &&
       Object.getPrototypeOf(val) === Object.getPrototypeOf({});

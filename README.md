@@ -13,8 +13,7 @@ the bycontract module and adds to it.
 
 # Usage
 Users will usually want to require/import the 'validate' and 'is' objects.
-The first for performing validations, and the second to add custom
-validator functions.
+The first for performing validations, and the second to add custom validator functions.
 
 ## Enhancements
 1. The original 'validate' function requires 2 and only 2 parameters.
@@ -29,17 +28,18 @@ it is a message to be used in validation Errors, overriding the default.
 1. The message for previous feature can use util.format % placeholders, with
 format varargs parameters being all remaining parameters.
 
-I added the following validator functions, whose purposes should be obvious
-from the names.
+I added the following validator types.
+I've added description for the ones where the type-name isn't intuitive.
 * int
 * date
 * posint
-* nonnegint
+* nonnegint  Non-negative integer
 * posnum
-* isotimestr
+* nonnegnum  Non-negative number
+* isotimestr  Allows optional Z, +nn:nn, -nn:nn time zone suffix
+* isotimestr_s  No time zone suffix
 * plainobject
-
-See file "readme.txt" for planned future enhancements.
+* strictdatestr  Format yyyy-mm-dd, where the segments must be 4 char + 2 char + 2 char
 
 Usage is same as for [bycontract](https://www.npmjs.com/package/bycontract) other than...
 ```javascript

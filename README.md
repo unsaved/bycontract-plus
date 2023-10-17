@@ -3,7 +3,7 @@ node.js module for validating (primarily) function parameters.
 
 ## DESIGN:  
 
-This module provides a map that's the same as that provided by Dmitry Sheiko's
+This module provides is the same as Dmitry Sheiko's
 [bycontract](https://www.npmjs.com/package/bycontract) module,
 with the feature extensions described below.
 I tried contracting Dmitry to get his direction on the best way to extend his
@@ -18,7 +18,7 @@ npm install @admc.com/bycontract-plus
 ```
 
 # Usage
-Users will usually want to import/require the 'validate' and 'is' objects.
+Developers will usually want to import/require the 'validate' and 'is' objects.
 The first for performing validations, and the second to add custom validator types.
 
 ES6 module environments:

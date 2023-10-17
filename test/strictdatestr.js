@@ -1,5 +1,5 @@
-const { validate } = require("../bycontractOverride");
-const assert = require("node:assert/strict");
+import { validate } from "../bycontractOverride.js";
+import { strict as assert } from 'assert';
 
 describe("bycontract 'strictdatestr' added type", () => {
     it("things not a string", () => {

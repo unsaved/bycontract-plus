@@ -1,10 +1,10 @@
 "use strict";
 
-const { format } = require("util");
-const byContract = require("bycontract");
-module.exports.Exception = byContract.Exception;
-module.exports.is = byContract.is;
-module.exports.validate = blaineValidate;
+import { format } from "util";
+import byContract from "bycontract";
+export const Exception = byContract.Exception;
+export const is = byContract.is;
+export const validate = blaineValidate;
 
 byContract.is.int = val => Number.isInteger(val);
 byContract.is.date = val => val !== null && typeof val === "object" && val instanceof Date;
@@ -26,14 +26,13 @@ byContract.is.isotimestr_s = val =>  // eslint-disable-line camelcase
 byContract.is.plainobject = val =>
     typeof val === "object" && val !== null &&
       Object.getPrototypeOf(val) === Object.getPrototypeOf({});
-class DoccedValError extends byContract.Exception {
+export class DoccedValError extends byContract.Exception {
     constructor() {
         const argArray = Array.prototype.slice.call(arguments);
         super(argArray.shift(), format.apply(null, argArray));
         this.name = "DoccedValError";
     }
 }
-module.exports.DoccedValError = DoccedValError;
 
 /**
  * Call like either:

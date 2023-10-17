@@ -8,7 +8,7 @@ This module provides a map that's the same as that provided by Dmitry Sheiko's
 I tried contracting Dmitry to get his direction on the best way to extend his
 module, but he hasn't replied to me.  Not knowing if I will have to repeat
 this extension work, I went with strategy that I can do most quickly and easily 
-(but not necessarily best long-term)-- just make this new project that loads
+(but not necessarily best long-term)-- I just made this new module that loads
 the bycontract module and adds to it.
 
 # Installation
@@ -22,7 +22,7 @@ For ES5 environments
 npm install @admc.com/bycontract-plus@1.3
 ```
 
-Disclosure: Node doc and usage indicates that if a module is ES6 then it must be loaded
+Disclosure: Node docs and usage indicates that if a module is ES6 then it must be loaded
 via "import...from".  For example, attempting a require from an ES5 environment results in:
 ````
 require() of ES Module <ES6_MODULE> from <ES5_SCRIPT> not supported.
@@ -49,15 +49,18 @@ const { validate, is } = require("@admc.com/bycontract-plus");
 Validate function calls are the same as for [bycontract](https://www.npmjs.com/package/bycontract)
 other than...
 
-// Allow more than two arguments elements:
+Allow more than two arguments elements:
+```javascript
 validate(arguments, ["string", "int"], false);
+```
 
-// In case of validation failure, use the specified Error message.
+In case of validation failure, use the specified Error message.
+```javascript
 validate(var, "string", "%ith element in issue list not a string", i);
+```
 
-// In particular, the run "[]" no longer means "any" Array, it means
-// precisely [], a 0-length array.
-// To get the original bycontract behavior to test for any Array, use:
+In particular, the run "[]" no longer means "any" Array, it means precisely [], a 0-length array.
+To get the original bycontract behavior to test for any Array, use:
 ```javascript
 validate(var, "", false);
 validate(arguments, [""], false);

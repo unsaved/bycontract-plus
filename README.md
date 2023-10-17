@@ -15,10 +15,12 @@ the bycontract module and adds to it.
 For ES6 or later environments
 ```bash
 npm install @admc.com/bycontract-plus
+```
 
 For ES5 environments
 ```bash
 npm install @admc.com/bycontract-plus@1.3
+```
 
 Disclosure: Node doc and usage indicates that if a module is ES6 then it must be loaded
 via "import...from".  For example, attempting a require from an ES5 environment results in:
@@ -63,10 +65,12 @@ Usage is same as for [bycontract](https://www.npmjs.com/package/bycontract) othe
 For ES6 environment use bycontract-plus up to versions since 2.0.0:
 ```javascript
 import { validate, is } from "@admc.com/bycontract-plus";
+```
 
 For bycontract-plus up to versions 1.3.x:
 ```javascript
 const { validate, is } = require("@admc.com/bycontract-plus");
+```
 
 // Allow more than two arguments elements:
 validate(arguments, ["string", "int"], false);

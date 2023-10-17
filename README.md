@@ -22,7 +22,8 @@ For ES5 environments
 npm install @admc.com/bycontract-plus@1
 ```
 
-Disclosure: Node docs and usage indicates that if a module is ES6 then it must be loaded
+### Disclosure
+Node docs and usage indicates that if a module is ES6 then it must be loaded
 via "import...from".  For example, attempting a require from an ES5 environment results in:
 ````
 require() of ES Module <ES6_MODULE> from <ES5_SCRIPT> not supported.

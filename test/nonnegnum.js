@@ -1,4 +1,4 @@
-import { validate } from "../bycontractOverride.js";
+import { validate } from "../bcplus-es6.mjs";
 import { strict as assert } from 'assert';
 
 describe("bycontract 'nonnegnum' added type", () => {

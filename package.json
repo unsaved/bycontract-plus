@@ -1,9 +1,14 @@
 {
   "name": "@admc.com/bycontract-plus",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Extensions to byconvention library",
   "main": "bcplus-es5.mjs",
-  "exports": [ { "require": "./bcplus-es5.cjs"  }, "./bcplus-es6.mjs" ],
+  "exports": [
+    {
+      "require": "./bcplus-es5.cjs"
+    },
+    "./bcplus-es6.mjs"
+  ],
   "scripts": {
     "test": "mocha",
     "lint": "eslint",

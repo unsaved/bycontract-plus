@@ -58,6 +58,7 @@ validate(var, "string", "%ith element in issue list not a string", i);
 // In particular, the run "[]" no longer means "any" Array, it means
 // precisely [], a 0-length array.
 // To get the original bycontract behavior to test for any Array, use:
+```javascript
 validate(var, "", false);
 validate(arguments, [""], false);
 ```

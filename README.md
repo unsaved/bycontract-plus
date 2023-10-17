@@ -19,7 +19,7 @@ npm install @admc.com/bycontract-plus
 
 For ES5 environments
 ```bash
-npm install @admc.com/bycontract-plus@1.3
+npm install @admc.com/bycontract-plus@1
 ```
 
 Disclosure: Node docs and usage indicates that if a module is ES6 then it must be loaded
@@ -41,7 +41,7 @@ For ES6 environment use bycontract-plus since version 2.0.0:
 import { validate, is } from "@admc.com/bycontract-plus";
 ```
 
-For bycontract-plus up to versions 1.3.x:
+For bycontract-plus before version 2.0.0:
 ```javascript
 const { validate, is } = require("@admc.com/bycontract-plus");
 ```

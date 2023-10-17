@@ -25,7 +25,7 @@ npm install @admc.com/bycontract-plus@1.3
 Disclosure: Node doc and usage indicates that if a module is ES6 then it must be loaded
 via "import...from".  For example, attempting a require from an ES5 environment results in:
 ````
-    require() of ES Module <ES6_MODULE> from <ES5_SCRIPT> not supported.
+require() of ES Module <ES6_MODULE> from <ES5_SCRIPT> not supported.
 ````
 Yet I see that some modules do somehow support both calling types, for example "yargs" since v16.
 Documentation and web searches aren't finding how this is done.
@@ -35,6 +35,32 @@ Until and if I figure that out, ES5 users must use the 1.x version of bycontract
 # Usage
 Users will usually want to import/require the 'validate' and 'is' objects.
 The first for performing validations, and the second to add custom validator types.
+
+For ES6 environment use bycontract-plus up to versions since 2.0.0:
+```javascript
+import { validate, is } from "@admc.com/bycontract-plus";
+```
+
+For bycontract-plus up to versions 1.3.x:
+```javascript
+const { validate, is } = require("@admc.com/bycontract-plus");
+```
+
+Validate function calls are the same as for [bycontract](https://www.npmjs.com/package/bycontract)
+other than...
+
+// Allow more than two arguments elements:
+validate(arguments, ["string", "int"], false);
+
+// In case of validation failure, use the specified Error message.
+validate(var, "string", "%ith element in issue list not a string", i);
+
+// In particular, the run "[]" no longer means "any" Array, it means
+// precisely [], a 0-length array.
+// To get the original bycontract behavior to test for any Array, use:
+validate(var, "", false);
+validate(arguments, [""], false);
+```
 
 ## Enhancements
 1. The original 'validate' function requires 2 and only 2 parameters.
@@ -61,28 +87,3 @@ I've added description for the ones where the type-name isn't intuitive.
 * isotimestr_s  No time zone suffix
 * plainobject
 * strictdatestr  Format yyyy-mm-dd, where the segments must be 4 char + 2 char + 2 char
-
-Usage is same as for [bycontract](https://www.npmjs.com/package/bycontract) other than...
-
-For ES6 environment use bycontract-plus up to versions since 2.0.0:
-```javascript
-import { validate, is } from "@admc.com/bycontract-plus";
-```
-
-For bycontract-plus up to versions 1.3.x:
-```javascript
-const { validate, is } = require("@admc.com/bycontract-plus");
-```
-
-// Allow more than two arguments elements:
-validate(arguments, ["string", "int"], false);
-
-// In case of validation failure, use the specified Error message.
-validate(var, "string", "%ith element in issue list not a string", i);
-
-// In particular, the run "[]" no longer means "any" Array, it means
-// precisely [], a 0-length array.
-// To get the original bycontract behavior to test for any Array, use:
-validate(var, "", false);
-validate(arguments, [""], false);
-```

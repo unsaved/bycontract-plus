@@ -24,7 +24,9 @@ npm install @admc.com/bycontract-plus@1.3
 
 Disclosure: Node doc and usage indicates that if a module is ES6 then it must be loaded
 via "import...from".  For example, attempting a require from an ES5 environment results in:
+````
     require() of ES Module <ES6_MODULE> from <ES5_SCRIPT> not supported.
+````
 Yet I see that some modules do somehow support both calling types, for example "yargs" since v16.
 Documentation and web searches aren't finding how this is done.
 If you know, please email me.

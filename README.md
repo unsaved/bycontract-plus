@@ -1,7 +1,7 @@
 # Description
 node.js module for validating (primarily) function parameters.
 
-## DEPRECATION:  
+## DESIGN:  
 
 This module provides a map that's the same as that provided by Dmitry Sheiko's
 'bycontract' module, with the feature extensions described below.

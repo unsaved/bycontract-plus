@@ -36,7 +36,7 @@ Until and if I figure that out, ES5 users must use the 1.x version of bycontract
 Users will usually want to import/require the 'validate' and 'is' objects.
 The first for performing validations, and the second to add custom validator types.
 
-For ES6 environment use bycontract-plus up to versions since 2.0.0:
+For ES6 environment use bycontract-plus since version 2.0.0:
 ```javascript
 import { validate, is } from "@admc.com/bycontract-plus";
 ```

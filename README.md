@@ -4,7 +4,8 @@ node.js module for validating (primarily) function parameters.
 ## DESIGN:  
 
 This module provides a map that's the same as that provided by Dmitry Sheiko's
-'bycontract' module, with the feature extensions described below.
+[bycontract](https://www.npmjs.com/package/bycontract) module,
+with the feature extensions described below.
 I tried contracting Dmitry to get his direction on the best way to extend his
 module, but he hasn't replied to me.  Not knowing if I will have to repeat
 this extension work, I went with strategy that I can do most quickly and easily 
@@ -12,37 +13,20 @@ this extension work, I went with strategy that I can do most quickly and easily
 the bycontract module and adds to it.
 
 # Installation
-For ES6 or later environments
 ```bash
 npm install @admc.com/bycontract-plus
 ```
-
-For ES5 environments
-```bash
-npm install @admc.com/bycontract-plus@1
-```
-
-### Disclosure
-Node docs and usage indicates that if a module is ES6 then it must be loaded
-via "import...from".  For example, attempting a require from an ES5 environment results in:
-````
-require() of ES Module <ES6_MODULE> from <ES5_SCRIPT> not supported.
-````
-Yet I see that some modules do somehow support both calling types, for example "yargs" since v16.
-Documentation and web searches aren't finding how this is done.
-If you know, please email me.
-Until and if I figure that out, ES5 users must use the 1.x version of bycontract-plus.
 
 # Usage
 Users will usually want to import/require the 'validate' and 'is' objects.
 The first for performing validations, and the second to add custom validator types.
 
-For ES6 environment use bycontract-plus since version 2.0.0:
+ES6 module environments:
 ```javascript
 import { validate, is } from "@admc.com/bycontract-plus";
 ```
 
-For bycontract-plus before version 2.0.0:
+ES5 CommonJS environments:
 ```javascript
 const { validate, is } = require("@admc.com/bycontract-plus");
 ```
@@ -67,7 +51,7 @@ validate(var, "", false);
 validate(arguments, [""], false);
 ```
 
-## Enhancements
+## Enhancements over bycontract (without "-plus") module
 1. The original 'validate' function requires 2 and only 2 parameters.
 I support some optional extra params.
 1. For validate calls where contract parameter (2nd) is an Array, I enforce

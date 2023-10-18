@@ -12,6 +12,7 @@
   "scripts": {
     "test": "mocha",
     "lint": "eslint",
+    "lint-all": "eslint *.js test/*.js",
     "require+": "node -p 'const { validate, is } = require(\"./bycontractOverride\"); validate(\"str\", \"string\");'",
     "require-": "node -p 'const { validate, is } = require(\"./bycontractOverride\"); validate(\"str\", \"int\");'",
     "import+": "node -r esm -p 'import { validate, is } from \"./bycontractOverride\"; validate(\"str\", \"string\");'",

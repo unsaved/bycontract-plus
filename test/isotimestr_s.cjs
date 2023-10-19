@@ -1,3 +1,5 @@
+"use strict";
+
 const { validate } = require("../bcplus-es5.cjs");
 const { strict: assert } = require("assert");
 
